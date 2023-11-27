@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Backup Information</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Backup Portal Informatics System</h1>
+        <button id="backup-button">Backup EC2 Now</button>
+	<button id="backuprds-button">Backup RDS Now</button>
+	<button id="but1ton">Change Auto Backup EC2 timing</button>
+	<button id="but2ton">Change Auto Backup RDS timing</button>
+        <button id="switch-table-button">Switch to S3 View</button>
+	<p>you can find all your backup snapshots under ec2>snapshots / rds>snapshots </p>
+	<p>to autobackup add a tag key:BackUp	value:Yes</p>
+	<p>to put important file use the below command
+        <pre><code>
+        aws s3 cp /path/to/your/local/file.txt arn:aws:s3:::backuprepositoryforimportantfilesandrds/
+            </code></pre>
+    </p>
+    </div>
+    <div id="table-container" class="scrollable-table">
+        <table id="table1">
+            <thead>
+                <tr>
+                    <th>Snapshot ID</th>
+                    <th>Volume ID</th>
+                    <th>Instance ID</th>
+                    <th>Delete On</th>
+                    <th>Current Date Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Table content will be populated here -->
+            </tbody>
+        </table>
+        <table id="table2">
+            
+            <tbody>
+                <!-- Table content will be populated here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
